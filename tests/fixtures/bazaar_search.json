@@ -1,0 +1,198 @@
+{
+ "properties": {
+  "statusCode": 200,
+  "errorMessage": ""
+ },
+ "singleReply": {
+  "searchBodyV2Reply": {
+   "pageBody": {
+    "description": "",
+    "rows": [
+     {
+      "simpleAppItem": {
+       "info": {
+        "packageName": "fars.zarashk",
+        "name": "زرشک",
+        "image": "https://s.cafebazaar.ir/images/icons/fars.zarashk_128x128.webp",
+        "versionCode": 26,
+        "minimumSdkVersion": 4,
+        "rate": 4.1,
+        "authorName": "",
+        "hasInAppPurchase": true,
+        "isEnabled": true,
+        "incompatible": false,
+        "category": "آموزش",
+        "shortDescription": "",
+        "installCountVerbose": "۱.۲",
+        "installCountVerboseLabel": "هزار",
+        "installCountVerboseDescription": "نصب",
+        "screenshots": [],
+        "paymentInfo": {
+         "price": 0,
+         "priceBeforeDiscount": 0,
+         "priceString": "رایگان",
+         "priceBeforeDiscountString": ""
+        },
+        "verboseReviewCount": "",
+        "verboseSize": "",
+        "verboseSizeLabel": "",
+        "videoTrailer": null,
+        "showScreenshotsType": 0,
+        "thirdPartyPayment": {
+         "title": "پرداخت درون برنامه‌ای",
+         "packageUrl": ""
+        },
+        "aliasPackageName": "fars.zarashk",
+        "signatures": [],
+        "incentiveCampaigns": []
+       },
+       "isAd": false,
+       "adData": null,
+       "referrer": null
+      }
+     },
+     {
+      "simpleAppItem": {
+       "info": {
+        "packageName": "ir.softwareco.zereshk",
+        "name": "زرشک",
+        "image": "https://s.cafebazaar.ir/images/icons/ir.softwareco.zereshk_128x128.webp",
+        "versionCode": 13000,
+        "minimumSdkVersion": 15,
+        "rate": 2.6,
+        "authorName": "",
+        "hasInAppPurchase": true,
+        "isEnabled": true,
+        "incompatible": false,
+        "category": "کلمات و دانستنی‌ها",
+        "shortDescription": "",
+        "installCountVerbose": "۴.۴",
+        "installCountVerboseLabel": "هزار",
+        "installCountVerboseDescription": "نصب",
+        "screenshots": [],
+        "paymentInfo": {
+         "price": 0,
+         "priceBeforeDiscount": 0,
+         "priceString": "رایگان",
+         "priceBeforeDiscountString": ""
+        },
+        "verboseReviewCount": "",
+        "verboseSize": "",
+        "verboseSizeLabel": "",
+        "videoTrailer": null,
+        "showScreenshotsType": 0,
+        "thirdPartyPayment": {
+         "title": "پرداخت درون برنامه‌ای",
+         "packageUrl": ""
+        },
+        "aliasPackageName": "ir.softwareco.zereshk",
+        "signatures": [],
+        "incentiveCampaigns": []
+       },
+       "isAd": false,
+       "adData": null,
+       "referrer": null
+      }
+     },
+     {
+      "simpleAppItem": {
+       "info": {
+        "packageName": "com.balootgames.sofrechi",
+        "name": "سفره چی",
+        "image": "https://s.cafebazaar.ir/images/icons/com.balootgames.sofrechi-2a16d833-279f-4575-a81a-e1928bc0f002_128x128.webp",
+        "versionCode": 14,
+        "minimumSdkVersion": 24,
+        "rate": 4.3,
+        "authorName": "",
+        "hasInAppPurchase": true,
+        "isEnabled": true,
+        "incompatible": false,
+        "category": "تفننی",
+        "shortDescription": "",
+        "installCountVerbose": "۴۶۰",
+        "installCountVerboseLabel": "هزار",
+        "installCountVerboseDescription": "نصب",
+        "screenshots": [],
+        "paymentInfo": {
+         "price": 0,
+         "priceBeforeDiscount": 0,
+         "priceString": "رایگان",
+         "priceBeforeDiscountString": ""
+        },
+        "verboseReviewCount": "",
+        "verboseSize": "",
+        "verboseSizeLabel": "",
+        "videoTrailer": null,
+        "showScreenshotsType": 0,
+        "thirdPartyPayment": {
+         "title": "پرداخت درون برنامه‌ای",
+         "packageUrl": ""
+        },
+        "aliasPackageName": "com.balootgames.sofrechi",
+        "signatures": [],
+        "incentiveCampaigns": []
+       },
+       "isAd": false,
+       "adData": null,
+       "referrer": null
+      }
+     },
+     {
+      "simpleAppItem": {
+       "info": {
+        "packageName": "ir.rezim.app.android",
+        "name": "رضیم آموزش آشپزی و شیرینی پزی(ویدئو)",
+        "image": "https://s.cafebazaar.ir/images/icons/ir.rezim.app.android-790f3c1b-a6bd-4915-8333-03a18055f94c_128x128.webp",
+        "versionCode": 231,
+        "minimumSdkVersion": 21,
+        "rate": 5,
+        "authorName": "",
+        "hasInAppPurchase": true,
+        "isEnabled": true,
+        "incompatible": false,
+        "category": "آشپزی و رستوران",
+        "shortDescription": "",
+        "installCountVerbose": "۲۰",
+        "installCountVerboseLabel": "هزار",
+        "installCountVerboseDescription": "نصب",
+        "screenshots": [],
+        "paymentInfo": {
+         "price": 0,
+         "priceBeforeDiscount": 0,
+         "priceString": "رایگان",
+         "priceBeforeDiscountString": ""
+        },
+        "verboseReviewCount": "",
+        "verboseSize": "",
+        "verboseSizeLabel": "",
+        "videoTrailer": null,
+        "showScreenshotsType": 0,
+        "thirdPartyPayment": {
+         "title": "پرداخت درون برنامه‌ای",
+         "packageUrl": ""
+        },
+        "aliasPackageName": "ir.rezim.app.android",
+        "signatures": [],
+        "incentiveCampaigns": []
+       },
+       "isAd": false,
+       "adData": null,
+       "referrer": null
+      }
+     }
+    ],
+    "hasOrdinal": false,
+    "referrer": null,
+    "ttl": "0",
+    "actions": [],
+    "emptyStatePage": null,
+    "nextPageCursor": "24",
+    "sessionId": "",
+    "sections": []
+   },
+   "baseReferrers": [],
+   "hasMore": false,
+   "displayConfig": null
+  }
+ }
+}

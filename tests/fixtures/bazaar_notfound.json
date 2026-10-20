@@ -1,0 +1,12 @@
+{
+ "properties": {
+  "statusCode": 404,
+  "errorMessage": "Unfortunately the application was not found"
+ },
+ "singleReply": {
+  "appDetailsReply": {
+   "name": "",
+   "packageName": ""
+  }
+ }
+}

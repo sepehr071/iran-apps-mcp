@@ -1,0 +1,193 @@
+{
+ "properties": null,
+ "singleReply": {
+  "getPageBodyReply": {
+   "pageBody": {
+    "description": "",
+    "rows": [
+     {
+      "simpleAppItem": {
+       "info": {
+        "packageName": "com.android.chrome",
+        "name": "Google Chrome",
+        "image": "https://s.cafebazaar.ir/images/icons/com.android.chrome-fc99ba87-6fb9-4ac7-8100-cd6d20dec87c_512x512.webp",
+        "versionCode": 0,
+        "minimumSdkVersion": 14,
+        "rate": 4.4,
+        "authorName": "Google LLC",
+        "hasInAppPurchase": false,
+        "isEnabled": true,
+        "incompatible": false,
+        "category": "tools",
+        "shortDescription": "",
+        "installCountVerbose": "",
+        "installCountVerboseLabel": "",
+        "installCountVerboseDescription": "",
+        "screenshots": [],
+        "paymentInfo": {
+         "price": 0,
+         "priceBeforeDiscount": -1,
+         "priceString": "رایگان",
+         "priceBeforeDiscountString": ""
+        },
+        "verboseReviewCount": "",
+        "verboseSize": "",
+        "verboseSizeLabel": "",
+        "videoTrailer": null,
+        "showScreenshotsType": 0,
+        "thirdPartyPayment": null,
+        "aliasPackageName": "",
+        "signatures": [],
+        "incentiveCampaigns": []
+       },
+       "isAd": false,
+       "adData": null,
+       "referrer": null
+      }
+     },
+     {
+      "simpleAppItem": {
+       "info": {
+        "packageName": "com.sec.android.app.popupcalculator",
+        "name": "Samsung Calculator - ماشین حساب سامسونگ",
+        "image": "https://s.cafebazaar.ir/images/icons/com.sec.android.app.popupcalculator-fe8790fb-6ce6-49df-a0b6-42bf5361f1a8_512x512.webp",
+        "versionCode": 0,
+        "minimumSdkVersion": 24,
+        "rate": 4.6,
+        "authorName": "Samsung Electronics Co.,  Ltd.",
+        "hasInAppPurchase": false,
+        "isEnabled": true,
+        "incompatible": false,
+        "category": "tools",
+        "shortDescription": "",
+        "installCountVerbose": "",
+        "installCountVerboseLabel": "",
+        "installCountVerboseDescription": "",
+        "screenshots": [],
+        "paymentInfo": {
+         "price": 0,
+         "priceBeforeDiscount": -1,
+         "priceString": "رایگان",
+         "priceBeforeDiscountString": ""
+        },
+        "verboseReviewCount": "",
+        "verboseSize": "",
+        "verboseSizeLabel": "",
+        "videoTrailer": null,
+        "showScreenshotsType": 0,
+        "thirdPartyPayment": null,
+        "aliasPackageName": "",
+        "signatures": [],
+        "incentiveCampaigns": []
+       },
+       "isAd": false,
+       "adData": null,
+       "referrer": null
+      }
+     },
+     {
+      "simpleAppItem": {
+       "info": {
+        "packageName": "com.sec.android.app.myfiles",
+        "name": "Samsung My Files – مدیریت فایل سامسونگ",
+        "image": "https://s.cafebazaar.ir/images/icons/com.sec.android.app.myfiles-09cfc988-23c4-47a4-b727-8a6e7537fa18_512x512.webp",
+        "versionCode": 0,
+        "minimumSdkVersion": 24,
+        "rate": 4.5,
+        "authorName": "Samsung Electronics Co.,  Ltd.",
+        "hasInAppPurchase": false,
+        "isEnabled": true,
+        "incompatible": false,
+        "category": "tools",
+        "shortDescription": "",
+        "installCountVerbose": "",
+        "installCountVerboseLabel": "",
+        "installCountVerboseDescription": "",
+        "screenshots": [],
+        "paymentInfo": {
+         "price": 0,
+         "priceBeforeDiscount": -1,
+         "priceString": "رایگان",
+         "priceBeforeDiscountString": ""
+        },
+        "verboseReviewCount": "",
+        "verboseSize": "",
+        "verboseSizeLabel": "",
+        "videoTrailer": null,
+        "showScreenshotsType": 0,
+        "thirdPartyPayment": null,
+        "aliasPackageName": "",
+        "signatures": [],
+        "incentiveCampaigns": []
+       },
+       "isAd": false,
+       "adData": null,
+       "referrer": null
+      }
+     },
+     {
+      "simpleAppItem": {
+       "info": {
+        "packageName": "com.farsitel.bazaar",
+        "name": "بازار",
+        "image": "https://s.cafebazaar.ir/images/icons/com.farsitel.bazaar-b413fb72-5dc4-4a2d-b2a3-7cf567cb6650_512x512.webp",
+        "versionCode": 0,
+        "minimumSdkVersion": 4,
+        "rate": 4.3,
+        "authorName": "کافه‌بازار",
+        "hasInAppPurchase": false,
+        "isEnabled": true,
+        "incompatible": false,
+        "category": "tools",
+        "shortDescription": "",
+        "installCountVerbose": "",
+        "installCountVerboseLabel": "",
+        "installCountVerboseDescription": "",
+        "screenshots": [],
+        "paymentInfo": {
+         "price": 0,
+         "priceBeforeDiscount": -1,
+         "priceString": "رایگان",
+         "priceBeforeDiscountString": ""
+        },
+        "verboseReviewCount": "",
+        "verboseSize": "",
+        "verboseSizeLabel": "",
+        "videoTrailer": null,
+        "showScreenshotsType": 0,
+        "thirdPartyPayment": null,
+        "aliasPackageName": "",
+        "signatures": [],
+        "incentiveCampaigns": []
+       },
+       "isAd": false,
+       "adData": null,
+       "referrer": null
+      }
+     }
+    ],
+    "hasOrdinal": false,
+    "referrer": {
+     "type": 21,
+     "extraJson": "{\"service\":\"vitrin\",\"slug\":\"list~app~automatic~APP_BEST~tools\"}"
+    },
+    "ttl": "-1",
+    "actions": [],
+    "emptyStatePage": null,
+    "nextPageCursor": "",
+    "sessionId": "VOf1dPlW3sSG",
+    "sections": []
+   },
+   "baseReferrers": [],
+   "hasMore": true,
+   "displayConfig": {
+    "appButtonIsVisible": false,
+    "videoButtonIsVisible": false,
+    "watchLaterIsEnabled": false,
+    "appAppearanceType": 0,
+    "videoAppearanceType": 0,
+    "serialAppearanceType": 0
+   }
+  }
+ }
+}

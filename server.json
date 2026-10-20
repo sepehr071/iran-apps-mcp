@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.sepehr071/iran-apps-mcp",
+  "title": "Iran Apps",
+  "description": "Unofficial read-only Cafe Bazaar and Myket: search apps, compare versions and ratings, top lists.",
+  "repository": {
+    "url": "https://github.com/sepehr071/iran-apps-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://github.com/sepehr071/iran-apps-mcp",
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
+      "identifier": "iran-apps-mcp",
+      "version": "0.1.0",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "IRAN_APPS_MCP_PROXY",
+          "description": "Optional HTTP proxy URL, or a comma-separated list tried in turn, for cafebazaar.ir and myket.ir; system proxies are ignored.",
+          "isRequired": false,
+          "isSecret": false
+        }
+      ]
+    }
+  ]
+}
