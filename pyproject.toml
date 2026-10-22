@@ -1,13 +1,13 @@
 [project]
 name = "iran-apps-mcp"
-version = "0.1.0"
+version = "0.1.1"
 description = "Unofficial read-only MCP server for Iranian Android app stores Cafe Bazaar and Myket: search apps and games, compare versions and ratings across stores, top and new lists."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [{ name = "Sepehr Radmard", email = "sepehrr80@gmail.com" }]
 requires-python = ">=3.10"
-keywords = ["mcp", "model-context-protocol", "cafebazaar", "bazaar", "myket", "iran", "android", "app-store"]
+keywords = ["mcp", "mcp-server", "model-context-protocol", "iran", "persian", "cafebazaar", "cafe-bazaar", "bazaar", "myket", "android", "app-store", "apk", "ai-agents", "claude"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
