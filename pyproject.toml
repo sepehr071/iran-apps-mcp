@@ -1,6 +1,6 @@
 [project]
 name = "iran-apps-mcp"
-version = "0.1.1"
+version = "0.1.2"
 description = "Unofficial read-only MCP server for Iranian Android app stores Cafe Bazaar and Myket: search apps and games, compare versions and ratings across stores, top and new lists."
 readme = "README.md"
 license = "MIT"
