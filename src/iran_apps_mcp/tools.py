@@ -184,6 +184,8 @@ async def ap_top(
 
     Store-wide 'best' is Bazaar's trending list or Myket's editorial must-have list (no ranking guarantee). 'new' needs a
     category. Get slugs from ap_categories (they differ per store). Then ap_app or ap_compare on a package.
+    Categories are the store's own labels, so Myket 'productivity' is «ابزارهای کاربردی» (utilities: ride-hailing,
+    operator and government apps, file sharing, AI assistants) rather than office productivity.
     """
     category = _category(store, category, type)
     if kind == "new" and category is None:
