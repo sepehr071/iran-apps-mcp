@@ -28,7 +28,6 @@ def card(info: dict[str, Any]) -> dict[str, Any]:
     pay = info.get("paymentInfo") or {}
     return slim(
         {
-            "store": "bazaar",
             "package": info["packageName"],
             "name": info.get("name"),
             "category": info.get("category"),
@@ -98,8 +97,8 @@ def parse_detail(a: dict[str, Any]) -> dict[str, Any]:
             "is_game": a.get("isGame"),
             "developer": a.get("authorName"),
             "price": int(price.get("price") or 0) // 10,  # Bazaar sends Rial (20000 = "2000 Tomans")
-            "price_text": price.get("priceString"),
-            "in_app_purchase": a.get("hasInAppPurchase"),
+            "price_text": price.get("priceString") if price.get("price") else None,
+            "in_app_purchase": a.get("hasInAppPurchase") or None,
             "homepage": a.get("homepage"),
             "summary": a.get("shortDescription"),
             "description": clip(text_of(a.get("description") or ""), 1500),
@@ -119,7 +118,6 @@ async def related(package: str) -> list[dict[str, Any]]:
         apps = [
             slim(
                 {
-                    "store": "bazaar",
                     "package": i["packageName"],
                     "name": i.get("name"),
                     "rating": i.get("rate") or None,

@@ -13,12 +13,10 @@ from .registry import TOOLS
 INSTRUCTIONS = """\
 Unofficial, read-only access to the two big Iranian Android app stores: Cafe Bazaar (cafebazaar.ir, کافه بازار)
 and Myket (myket.ir, مایکت). Metadata only: nothing here downloads an APK, resolves a download link, logs in or posts
-reviews. Every result carries the store page URL.
+reviews. Every app carries its store page URL.
 
-Tools: ap_search finds apps in one or both stores (get the package name from it); ap_app gives one app's version,
-rating, installs, size and update date from one store; ap_compare shows the same package in both stores side by side
-(version, rating, who is newer); ap_top lists best or new apps per category (slugs from ap_categories, which differ per
-store); ap_similar lists related apps.
+Flow: ap_search gives the package name; ap_app, ap_compare (both stores) and ap_similar take it; ap_top lists best or
+new apps per category (slugs from ap_categories).
 
 Conventions: an app is identified by its Android package name ('com.whatsapp'), the same in both stores. Ratings are
 1-5 and per store (not shared). installs is an approximate rounded count (Bazaar a range, Myket '32 million'). Prices

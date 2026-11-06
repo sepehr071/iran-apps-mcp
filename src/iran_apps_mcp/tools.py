@@ -18,7 +18,7 @@ AppType = Literal["app", "game"]
 PackageArg = Annotated[
     str,
     Field(
-        description="Android package name, the id in store URLs, e.g. 'ir.mci.ecareapp' or 'com.whatsapp'.",
+        description="Android package name, e.g. 'com.whatsapp'.",
         min_length=3,
         max_length=200,
     ),
@@ -44,18 +44,16 @@ async def _both(*coros):
 async def ap_search(
     query: Annotated[
         str,
-        Field(description="Search text, Persian or English, e.g. 'تاکسی' or 'snapp'.", min_length=1, max_length=100),
+        Field(description="Persian or English, e.g. 'تاکسی'.", min_length=1, max_length=100),
     ],
-    store: Annotated[
-        StoreOrBoth, Field(description="'bazaar' (Cafe Bazaar), 'myket' or 'both' (default, results side by side).")
-    ] = "both",
-    page: Annotated[int, Field(description="1-based result page (Bazaar 24 per page, Myket 20).", ge=1, le=10)] = 1,
-    limit: Annotated[int, Field(description="Max apps returned per store.", ge=1, le=24)] = 10,
+    store: Annotated[StoreOrBoth, Field(description="'bazaar', 'myket' or 'both'.")] = "both",
+    page: Annotated[int, Field(description="1-based (Bazaar 24 per page, Myket 20).", ge=1, le=10)] = 1,
+    limit: Annotated[int, Field(description="Max apps per store.", ge=1, le=24)] = 10,
 ) -> dict[str, Any]:
     """Search Cafe Bazaar and/or Myket for apps and games by name; returns package names, ratings and store URLs.
 
-    Use first to find a package name, then ap_app for details or ap_compare for both stores. Bazaar cards carry
-    rating, category, approximate installs and a price when paid; Myket cards only name and tagline (ap_app has the rest).
+    Use first to find a package name. Bazaar cards carry rating, category, installs and price when paid; Myket cards
+    only name and tagline.
     """
 
     async def bz():
@@ -72,13 +70,12 @@ async def ap_search(
 @tool("App details")
 async def ap_app(
     package: PackageArg,
-    store: Annotated[Store, Field(description="'bazaar' (Cafe Bazaar) or 'myket'.")] = "bazaar",
+    store: Annotated[Store, Field(description="'bazaar' or 'myket'.")] = "bazaar",
 ) -> dict[str, Any]:
     """Get one app's metadata from one store: version, rating and rating count, installs, size, update date, developer, price, description.
 
     Bazaar also gives version_code, a 1-5 star histogram, changelog and permission count; Myket also the first publish
-    date and developer_id. installs is approximate (a rounded range). Prices are Toman, 0 = free. Metadata only: no
-    APK download. To see both stores at once use ap_compare.
+    date and developer_id. Prices are Toman, 0 = free. For both stores at once use ap_compare.
     """
     package = _package(package)
     return await (bazaar.detail(package) if store == "bazaar" else myket.detail(package))
@@ -106,9 +103,8 @@ def _ver(v: str | None) -> tuple[int, ...]:
 async def ap_compare(package: PackageArg) -> dict[str, Any]:
     """Compare one package across Cafe Bazaar and Myket: version, rating, rating count, installs, size, update date, price.
 
-    Returns each store's figures (null when the app is not listed there) and a diff: which store has the newer
-    version, the rating difference (bazaar minus myket). Use for "is the app up to date on Myket?" or "which store
-    rates it higher". Ratings are not shared between stores.
+    Returns each store's figures (null when not listed there) and a diff: newer version and rating difference
+    (bazaar minus myket).
     """
     package = _package(package)
     results = await asyncio.gather(bazaar.detail(package), myket.detail(package), return_exceptions=True)
@@ -160,32 +156,28 @@ def _category(store: str, category: str | None, type_: str) -> str | None:
 async def ap_top(
     store: Annotated[Store, Field(description="'bazaar' or 'myket'.")],
     kind: Annotated[
-        Literal["best", "new"], Field(description="'best' = top ranked, 'new' = newest in the category.")
+        Literal["best", "new"], Field(description="'best' = top ranked, 'new' = newest (needs category).")
     ] = "best",
     category: Annotated[
         str | None,
         Field(
-            description="Category slug from ap_categories, e.g. 'tools' (Bazaar) or 'productivity' (Myket). Omit for the store-wide list (best only)."
+            description="Slug from ap_categories, e.g. 'tools' (Bazaar), 'productivity' (Myket). Omit for the store-wide list."
         ),
     ] = None,
     type: Annotated[
         AppType,
-        Field(
-            description="'app' or 'game': which category list the slug belongs to, and which store-wide list when no category."
-        ),
+        Field(description="Which category list the slug belongs to, or which store-wide list."),
     ] = "app",
     page: Annotated[
         int,
-        Field(description="1-based page (Bazaar 24 per page, Myket 20, Myket stops after about 4 pages).", ge=1, le=10),
+        Field(description="1-based (Bazaar 24 per page, Myket 20, about 4 pages max).", ge=1, le=10),
     ] = 1,
-    limit: Annotated[int, Field(description="Max apps returned.", ge=1, le=24)] = 20,
+    limit: Annotated[int, Field(description="Max apps.", ge=1, le=24)] = 20,
 ) -> dict[str, Any]:
     """List the top ('best') or newest ('new') apps or games of a store, per category or store-wide.
 
-    Store-wide 'best' is Bazaar's trending list or Myket's editorial must-have list (no ranking guarantee). 'new' needs a
-    category. Get slugs from ap_categories (they differ per store). Then ap_app or ap_compare on a package.
-    Categories are the store's own labels, so Myket 'productivity' is «ابزارهای کاربردی» (utilities: ride-hailing,
-    operator and government apps, file sharing, AI assistants) rather than office productivity.
+    Store-wide 'best' is Bazaar's trending list or Myket's editorial must-have list. Slugs differ per store (see
+    ap_categories). Myket 'productivity' is «ابزارهای کاربردی» (utilities: ride-hailing, operator and government apps).
     """
     category = _category(store, category, type)
     if kind == "new" and category is None:
@@ -213,7 +205,7 @@ async def ap_categories(
     """List the category slugs of a store for apps and games, to pass as ap_top category.
 
     Slugs differ between the stores (Bazaar 'tools' = Myket 'productivity'). Myket names are Persian. The Bazaar game
-    list is the set that was verified to return results, not necessarily every game category.
+    list may be incomplete.
     """
     if store == "bazaar":
         return {"store": store, "apps": bazaar.APP_CATEGORIES, "games": bazaar.GAME_CATEGORIES}
@@ -231,7 +223,7 @@ async def ap_similar(
 ) -> dict[str, Any]:
     """List apps the store shows as related to one app: Bazaar gives three groups (related, others also installed, similar), Myket one.
 
-    Use to find alternatives or competitors of an app; then ap_compare or ap_app on a result.
+    Use to find alternatives or competitors of an app.
     """
     package = _package(package)
     groups = await (bazaar.related(package) if store == "bazaar" else myket.related(package))

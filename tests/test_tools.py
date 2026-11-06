@@ -35,7 +35,7 @@ async def test_search_both(client, api):
     data = await call(client, "ap_search", {"query": "تاکسی", "limit": 3})
     assert len(data["bazaar"]) == 3 and len(data["myket"]) == 3
     b = data["bazaar"][0]
-    assert b["store"] == "bazaar" and b["url"] == f"https://cafebazaar.ir/app/{b['package']}" and b["name"]
+    assert b["url"] == f"https://cafebazaar.ir/app/{b['package']}" and b["name"]
     m = data["myket"][0]
     assert m["package"] == "com.GlimGames.heytaxi" and m["name"] == "هی تاکسی" and m["tagline"] == "تفننی"
     assert not any(a["package"].startswith("v-") for a in data["myket"])  # video results are not apps
@@ -131,7 +131,7 @@ async def test_top_myket(client, api):
     for path in ("/list/Category_Hot_14", "/list/Category_New_26", "/list/page", "/list/must-have-android-apps"):
         api[path] = fixture("myket_search.html")
     d = await call(client, "ap_top", {"store": "myket", "category": "productivity"})
-    assert len(d["apps"]) == 4 and d["apps"][0]["store"] == "myket"
+    assert len(d["apps"]) == 4 and "store" not in d["apps"][0]
     await call(client, "ap_top", {"store": "myket", "category": "action", "type": "game", "kind": "new"})
     assert api.calls[-1].url.path == "/list/Category_New_26"
     await call(client, "ap_top", {"store": "myket", "category": "productivity", "page": 2})
@@ -164,7 +164,7 @@ async def test_similar(client, api):
     b = await call(client, "ap_similar", {"package": "ir.mci.ecareapp"})
     assert len(b["groups"]) == 3 and b["groups"][0]["apps"][0]["package"] == "com.intsig.camscanner"
     m = await call(client, "ap_similar", {"package": "ir.mci.ecareapp", "store": "myket"})
-    assert len(m["groups"][0]["apps"]) == 3 and m["groups"][0]["apps"][0]["store"] == "myket"
+    assert len(m["groups"][0]["apps"]) == 3 and "store" not in m["groups"][0]["apps"][0]
 
 
 async def test_bazaar_price_is_converted_from_rial(client, api):

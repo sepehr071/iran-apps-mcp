@@ -52,7 +52,6 @@ def cards(page_html: str) -> list[dict[str, Any]]:
         out.append(
             slim(
                 {
-                    "store": "myket",
                     "package": pkg,
                     "name": title.strip(_MARKS),
                     "tagline": tag and tag.group(1).strip(),
