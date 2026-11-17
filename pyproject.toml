@@ -1,9 +1,9 @@
 [project]
 name = "iran-apps-mcp"
-version = "0.2.0"
+version = "0.2.1"
 description = "Unofficial read-only MCP server for Iranian Android app stores Cafe Bazaar and Myket: search apps and games, compare versions and ratings across stores, top and new lists."
 readme = "README.md"
-license = "MIT"
+license = "PolyForm-Noncommercial-1.0.0"
 license-files = ["LICENSE"]
 authors = [{ name = "Sepehr Radmard", email = "sepehrr80@gmail.com" }]
 requires-python = ">=3.10"
