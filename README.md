@@ -171,25 +171,6 @@ An app is identified by its Android package name (for example `com.whatsapp`). G
 
 All 6 tools are annotated `readOnlyHint: true`.
 
-## How it works
-
-```text
-  AI agent  (Claude, Cursor, Copilot, ...)
-      │
-      │  MCP over stdio
-      ▼
-  iran-apps-mcp  (runs on your machine)
-      │
-      │  HTTPS
-      ├──────▶  api.cafebazaar.ir   JSON API of the Bazaar web app
-      └──────▶  myket.ir            page HTML (schema.org JSON-LD, facts table)
-```
-
-`iran-apps-mcp` runs locally and has no hosted server in between and no API key. Cafe Bazaar is read through the JSON
-requests its own web app uses; Myket has no JSON API, so its data is parsed from page HTML. Requests go out through a
-Chrome-impersonating client, at most 4 at a time with a little jitter, and a failed request is retried up to twice.
-It only reads.
-
 ## Good to know
 
 - **Prices are in Toman**, 0 means free. Both stores quote Rial internally; the server divides by 10.
